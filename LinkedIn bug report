@@ -1,0 +1,39 @@
+Bug Report - LinkedIn
+
+Summary:
+Incorrect Job Title Displayed in Connection's Profile
+
+Environment:
+- Operating System: Windows 10
+- Browser: Google Chrome 93.0.4577.63
+- Device: Desktop PC
+
+Steps to Reproduce:
+1. Log in to your LinkedIn account.
+2. Navigate to your connection's profile page (Connection Name: Jane Smith).
+3. Observe the displayed job title in the profile header.
+
+Expected Result:
+The displayed job title should match the job title mentioned in the connection's profile information.
+
+Actual Result:
+The displayed job title is "Marketing Manager" while the profile information states "Senior Marketing Specialist".
+
+Additional Information:
+- This issue is reproducible on both the LinkedIn website and mobile app.
+- I've cleared browser cache and cookies, but the issue persists.
+- Other connections' profile information appears to be displayed correctly.
+- The issue is consistent across different browser sessions.
+
+Severity: 
+Minor
+
+Priority:
+Medium
+
+Reporter:
+John Doe
+john.doe@example.com
+August 16, 2023
+
+
