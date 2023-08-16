@@ -1,0 +1,26 @@
+describe('Login Scenarios', () => {
+  beforeEach(() => {
+    cy.visit('/login'); // Change this URL to match your application's login page  });
+
+  it('should successfully log in with valid credentials', () => {
+    cy.get('input[name="username"]').type('valid-username');
+    cy.get('input[name="password"]').type('valid-password');
+    cy.get('button[type="submit"]').click();
+
+    cy.url().should('eq', 'https://your-app-url.com/dashboard'); // Check if redirected to the dashboard
+    cy.contains('Welcome, valid-username'); // Check if the username is displayed  });
+
+  it('should display an error with invalid credentials', () => {
+    cy.get('input[name="username"]').type('invalid-username');
+    cy.get('input[name="password"]').type('invalid-password');
+    cy.get('button[type="submit"]').click();
+
+    cy.contains('Invalid username or password'); // Check for error message });
+
+  it('should display an error when fields are left blank', () => {
+    cy.get('button[type="submit"]').click();
+
+    cy.contains('Username is required'); // Check for username field error
+    cy.contains('Password is required'); // Check for password field error
+  });
+});
