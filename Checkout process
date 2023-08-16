@@ -1,0 +1,21 @@
+describe('Checkout Process', () => {
+  beforeEach(() => {
+    cy.visit('/cart'); // Change this URL to match your cart page
+    cy.get('[data-testid="checkout-button"]').click(); // Assuming there's a button to initiate checkout
+  });
+
+  it('should complete the checkout process', () => {
+    cy.get('input[name="first-name"]').type('John');
+    cy.get('input[name="last-name"]').type('Doe');
+    cy.get('input[name="email"]').type('john@example.com');
+    cy.get('input[name="address"]').type('123 Main Street');
+    cy.get('input[name="city"]').type('Anytown');
+    cy.get('input[name="zip"]').type('12345');
+    cy.get('select[name="country"]').select('United States'); // Assuming a country dropdown
+    cy.get('[data-testid="place-order-button"]').click(); // Assuming a button to place the order
+
+    cy.contains('Order placed successfully');
+    cy.url().should('eq', 'https://your-app-url.com/order-confirmation'); // Change to your order confirmation page URL
+  });
+});
+
