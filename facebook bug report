@@ -1,0 +1,40 @@
+Bug Report - Facebook
+
+Summary:
+Incorrect Profile Picture Displayed After Changing Cover Photo
+
+Environment:
+- Browser: Safari 
+- Device: oppo reno7 4G
+
+Steps to Reproduce:
+1. Log in to my Facebook account.
+2. Go to my profile page.
+3. Click on the "Edit Cover Photo" button.
+4. Upload a new cover photo from my computer.
+5. Save the changes and observe the profile page.
+
+Expected Result:
+The new cover photo should be displayed correctly on the profile page.
+
+Actual Result:
+The old cover photo is still displayed as the profile picture.
+
+Additional Information:
+- This issue occurs consistently in the Safari browser.
+- I have cleared the browser cache and cookies, but the problem persists.
+- The incorrect profile picture is only displayed when viewing my profile from my own account.
+- Other users are seeing the correct profile picture after the cover photo change.
+
+Severity: 
+Moderate
+
+Priority:
+Medium
+
+Reporter:
+sally mohamed
+sallymohamed2666@gmail.com
+August 16, 2023
+
+
