@@ -1,0 +1,23 @@
+describe('Cart Scenarios', () => {
+  beforeEach(() => {
+    cy.visit('/product/123'); // Change this URL to match your product page
+  });
+
+  it('should add an item to the cart', () => {
+    cy.get('button[data-testid="add-to-cart"]').click(); // Adjust the selector accordingly
+
+    cy.get('[data-testid="cart-icon"]').should('have.text', '1'); // Verify cart item count
+    cy.contains('Item added to cart successfully');
+  });
+
+  it('should update the cart count when adding multiple items', () => {
+    cy.get('button[data-testid="add-to-cart"]').click(); // Add first item
+    cy.get('[data-testid="cart-icon"]').should('have.text', '1'); // Verify cart item count
+
+    cy.visit('/product/456'); // Change this URL to another product page
+    cy.get('button[data-testid="add-to-cart"]').click(); // Add second item
+    cy.get('[data-testid="cart-icon"]').should('have.text', '2'); // Verify updated cart item count
+
+    cy.contains('Item added to cart successfully');
+  });
+});
