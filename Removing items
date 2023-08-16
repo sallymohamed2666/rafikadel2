@@ -1,0 +1,20 @@
+describe('Cart Scenarios', () => {
+  beforeEach(() => {
+    cy.visit('/cart'); // Change this URL to match your cart page
+    cy.get('[data-testid="cart-item"]').as('cartItems'); // Assuming cart items have a common data-testid attribute
+  });
+
+  it('should remove an item from the cart', () => {
+    cy.get('@cartItems').eq(0).find('[data-testid="remove-item"]').click(); // Adjust the selector accordingly
+
+    cy.get('@cartItems').should('have.length', 0); // Verify cart is empty
+    cy.contains('Item removed from cart successfully');
+  });
+
+  it('should update the cart count when removing items', () => {
+    cy.get('@cartItems').eq(1).find('[data-testid="remove-item"]').click(); // Remove second item
+
+    cy.get('[data-testid="cart-icon"]').should('have.text', '1'); // Verify updated cart item count
+    cy.contains('Item removed from cart successfully');
+  });
+});
